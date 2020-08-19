@@ -1,0 +1,42 @@
+{
+  "contextRoot": "",
+  "internalPort": "",
+  "healthCheck": "",
+  "internalDebugPort": "",
+  "isHttps": false,
+  "ignoredPaths": [
+    "*.idea/*",
+    "*.iml",
+    ".project",
+    "load-test*",
+    "*.swp",
+    "*.swx",
+    "*.gitignore",
+    "*node_modules*",
+    "*4913",
+    ".git/*",
+    ".DS_Store",
+    ".dockerignore",
+    "*~",
+    ".settings",
+    ".classpath",
+    ".options",
+    ".vscode/*",
+    "Dockerfile-tools",
+    "target",
+    "mc-target",
+    "cli-config.yml",
+    "README.md",
+    "Jenkinsfile",
+    ".cfignore",
+    "localm2cache.zip",
+    "libertyrepocache.zip"
+  ],
+  "mavenProfiles": [
+    ""
+  ],
+  "mavenProperties": [
+    ""
+  ],
+  "statusPingTimeout": ""
+}
