@@ -1,6 +1,5 @@
 package bsu.chatbot.usermanagement.service;
 
-import java.math.BigInteger;
 import java.util.List;
 
 import bsu.chatbot.usermanagement.model.App;

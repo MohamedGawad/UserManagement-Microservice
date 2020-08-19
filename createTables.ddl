@@ -26,7 +26,7 @@ CREATE TABLE `Application` (
 
 CREATE TABLE `Channel` (
   `ID` bigint(20) NOT NULL,
-  `Name` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Name` VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `Description` longtext CHARACTER SET utf8 COLLATE utf8_bin NULL,
   `IsActive` smallint(1) NOT NULL,
   PRIMARY KEY (`ID`)
@@ -45,7 +45,7 @@ CREATE TABLE `Msngruserprofile` (
   `LastUpdatedDate` datetime DEFAULT NULL,
   `IsActive` smallint(1) NOT NULL,
   `appId` bigint(20) NOT NULL,
-  `channelId` bigint(20) NOT NULL,
+  `channelId` VARCHAR(10) NOT NULL,
   PRIMARY KEY (`Id`)
 );
 CONNECT RESET;

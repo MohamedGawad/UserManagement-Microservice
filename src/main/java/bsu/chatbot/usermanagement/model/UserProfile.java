@@ -63,7 +63,7 @@ public class UserProfile  implements Serializable {
 	private BigInteger appId;
 	
 	@Column(name = "channelId",nullable = false)
-	private BigInteger channelId;
+	private String channelId;
 	
 
 	public BigInteger getId() {
@@ -90,11 +90,13 @@ public class UserProfile  implements Serializable {
 		this.appId = appId;
 	}
 
-	public BigInteger getChannelId() {
+	
+
+	public String getChannelId() {
 		return channelId;
 	}
 
-	public void setChannelId(BigInteger channelId) {
+	public void setChannelId(String channelId) {
 		this.channelId = channelId;
 	}
 

@@ -44,7 +44,7 @@ public class UserProfileDto {
 	private BigInteger appId;
 	
 	@NotNull(message = "channelId is null")
-	private BigInteger channelId;
+	private String channelId;
 
 	
 
@@ -137,13 +137,15 @@ public class UserProfileDto {
 		this.appId = appId;
 	}
 
-	public BigInteger getChannelId() {
+	public String getChannelId() {
 		return channelId;
 	}
 
-	public void setChannelId(BigInteger channelId) {
+	public void setChannelId(String channelId) {
 		this.channelId = channelId;
 	}
+
+	
 
 	
 
