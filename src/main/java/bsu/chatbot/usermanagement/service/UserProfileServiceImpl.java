@@ -1,6 +1,5 @@
 package bsu.chatbot.usermanagement.service;
 
-import java.math.BigInteger;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -26,7 +25,7 @@ public class UserProfileServiceImpl implements UserProfileService {
 	public UserProfileDao userProfileDao;
 
 	@Inject
-	public JDBCService JDBCService;
+	public MapperService mapperService;
 
 	private List<UserProfile> users;
 
@@ -48,14 +47,14 @@ public class UserProfileServiceImpl implements UserProfileService {
 	@Override
 	public UserProfileDto getUserById(String senderId) {
 		logger.warning("UserProfile sent: " + senderId);
-		return (UserProfileDto) JDBCService.convertToDto(UserProfileDto.class, userProfileDao.getUserBySenderId(senderId));
+		return (UserProfileDto) mapperService.convertToDto(UserProfileDto.class, userProfileDao.getUserBySenderId(senderId));
 	}
 
 	@Override
 	public UserProfileDto addUser(UserProfileDto userProfileDto) {
 		UserProfile userProfileEntity;
 		try {
-			userProfileEntity = (UserProfile) JDBCService.convertToEntity(UserProfile.class, userProfileDto);
+			userProfileEntity = (UserProfile) mapperService.convertToEntity(UserProfile.class, userProfileDto);
 			userProfileEntity = userProfileDao.addUser(userProfileEntity);
 		} catch (EntityExistsException e) {
 			logger.warning("UserProfile already exists for: " + userProfileDto.getId());
@@ -64,7 +63,7 @@ public class UserProfileServiceImpl implements UserProfileService {
 			logger.warning(e.getMessage());
 			throw e;
 		}
-		return (UserProfileDto) JDBCService.convertToDto(UserProfileDto.class, userProfileEntity);
+		return (UserProfileDto) mapperService.convertToDto(UserProfileDto.class, userProfileEntity);
 	}
 
 	@Override

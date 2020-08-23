@@ -15,13 +15,13 @@ import javax.persistence.Table;
  *
  *         SBM-API
  */
-@Entity(name = "Msngruserprofile")
-@Table(name = "Msngruserprofile")
+@Entity(name = "UserProfile")
+@Table(name = "UserProfile")
 @NamedQueries(
-		  {@NamedQuery(name = "Msngruserprofile.findAll", 
-		               query = "SELECT p FROM Msngruserprofile p"),
-		   @NamedQuery(name = "Msngruserprofile.findById", 
-		               query = "SELECT p FROM Msngruserprofile p WHERE p.Id = :userId")}
+		  {@NamedQuery(name = "UserProfile.findAll", 
+		               query = "SELECT p FROM UserProfile p"),
+		   @NamedQuery(name = "UserProfile.findById", 
+		               query = "SELECT p FROM UserProfile p WHERE p.Id = :userId")}
 		)
 
 public class UserProfile  implements Serializable {
@@ -35,7 +35,7 @@ public class UserProfile  implements Serializable {
     @Column(nullable = false, length = 20, name = "Id")
 	private BigInteger Id;
 
-	@Column(nullable = false, length = 256, name = "UserUniqueId")
+	@Column(nullable = false, length = 20, name = "UserUniqueId")
 	private BigInteger UserUniqueId;
 	
 	@Column(name = "FisrtName")

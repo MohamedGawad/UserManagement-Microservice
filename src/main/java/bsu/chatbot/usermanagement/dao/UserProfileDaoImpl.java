@@ -6,7 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.enterprise.context.RequestScoped;
-import javax.faces.convert.BigIntegerConverter;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -28,13 +27,13 @@ public class UserProfileDaoImpl implements UserProfileDao {
 
 	private String INSERT_USER_PROFILE_STMT = "INSERT INTO userprofile(senderId, FisrtName, LastName, gender, locale, profilePic, timeZone, isActive,appId)" + " VALUES (?,?,?,?,?,?,?,?,?)";
 
-	private String GET_USER_PROFILE_STMT = "select * from Msngruserprofile";
+	private String GET_USER_PROFILE_STMT = "select * from UserProfile";
 	
-	private String GET_USER_PROFILE_STMT_BY_ID = "select * from userMsngruserprofileprofile where Id = ?";
+	private String GET_USER_PROFILE_STMT_BY_ID = "select * from userUserProfile where Id = ?";
 	
-	private String DELETE_USER_PROFILE_STMT_BY_ID = "delete from Msngruserprofile where Id = ?";
+	private String DELETE_USER_PROFILE_STMT_BY_ID = "delete from UserProfile where Id = ?";
 
-	private String UPDATE_USER_PROFILE_STMT = "UPDATE Msngruserprofile SET FisrtName=?,LastName=?,gender=?,locale=?," + "profilePic=?,timeZone=?,LastUpdatedDate=?,IsActive=? WHERE senderId=?";
+	private String UPDATE_USER_PROFILE_STMT = "UPDATE UserProfile SET FisrtName=?,LastName=?,gender=?,locale=?," + "profilePic=?,timeZone=?,LastUpdatedDate=?,IsActive=? WHERE senderId=?";
 
 	public void init() {
 	}
@@ -50,7 +49,7 @@ public class UserProfileDaoImpl implements UserProfileDao {
 			throw e; 
 		}
 		
-		return  em.createNamedQuery("Msngruserprofile.findById", UserProfile.class).setParameter("userId", bigIntegerStr).getSingleResult();
+		return  em.createNamedQuery("UserProfile.findById", UserProfile.class).setParameter("userId", bigIntegerStr).getSingleResult();
 	}
 
 	public UserProfile addUser(UserProfile userProfile) {
@@ -62,7 +61,7 @@ public class UserProfileDaoImpl implements UserProfileDao {
 	@Override
 	public List<UserProfile> getAllUsers() {
 		LOGGER.log(Level.INFO,GET_USER_PROFILE_STMT);
-		return em.createNamedQuery("Portfolio.findAll", UserProfile.class).getResultList();
+		return em.createNamedQuery("UserProfile.findAll", UserProfile.class).getResultList();
 	}
 
 	@Override

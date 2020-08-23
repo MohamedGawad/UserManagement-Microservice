@@ -2,7 +2,6 @@ package bsu.chatbot.usermanagement.model;
 
 import java.math.BigInteger;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 
 /**
