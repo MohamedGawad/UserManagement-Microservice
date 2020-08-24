@@ -16,28 +16,29 @@
 
 CONNECT TO `BSU01-001`;
 
+
 CREATE TABLE `Application` (
   `ID` bigint(20) NOT NULL,
-  `Name` text CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `Description` longtext CHARACTER SET utf8 COLLATE utf8_bin NULL,
-  `LogoUrl` longtext CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `Name` text CHARACTER SET utf8 NOT NULL,
+  `Description` longtext CHARACTER SET utf8  NULL,
+  `LogoUrl` longtext CHARACTER SET utf8 NOT NULL,
   PRIMARY KEY (`ID`)
 );
 
 CREATE TABLE `Channel` (
   `ID` bigint(20) NOT NULL,
-  `Name` VARCHAR(10) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `Description` longtext CHARACTER SET utf8 COLLATE utf8_bin NULL,
+  `Name` text CHARACTER SET utf8  NOT NULL,
+  `Description` longtext CHARACTER SET utf8  NULL,
   `IsActive` smallint(1) NOT NULL,
   PRIMARY KEY (`ID`)
 );
 
-CREATE TABLE `Msngruserprofile` (
+CREATE TABLE `UserProfile` (
   `Id` bigint(20) NOT NULL,
   `UserUniqueId` bigint(20) NOT NULL,
-  `FisrtName` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `LastName` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `gender` varchar(20) NOT NULL,
+  `FisrtName` varchar(256) NOT NULL,
+  `LastName` varchar(256) NOT NULL,
+  `gender` varchar(20) DEFAULT NULL,
   `locale` varchar(100) DEFAULT NULL,
   `profilePic` varchar(2000) DEFAULT NULL,
   `timeZone` int(11) DEFAULT NULL,
@@ -45,7 +46,22 @@ CREATE TABLE `Msngruserprofile` (
   `LastUpdatedDate` datetime DEFAULT NULL,
   `IsActive` smallint(1) NOT NULL,
   `appId` bigint(20) NOT NULL,
-  `channelId` VARCHAR(10) NOT NULL,
+  `channelId` varchar(10) NOT NULL,
+  PRIMARY KEY (`Id`)
+);
+
+CREATE TABLE `User` (
+  `Id` bigint(20) NOT NULL,
+  `FisrtName` varchar(256)  NOT NULL,
+  `LastName` varchar(256)  NOT NULL,
+  `Username` varchar(256) NOT NULL,
+  `password` varchar(24)  NOT NULL,
+  `gender` varchar(20) NOT NULL,
+  `favourite_local` varchar(100) DEFAULT NULL,
+  `CreatedDate` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `LastUpdatedDate` datetime DEFAULT NULL,
+  `IsActive` smallint(1) NOT NULL,
+  `appId` bigint(20) NOT NULL,
   PRIMARY KEY (`Id`)
 );
 CONNECT RESET;

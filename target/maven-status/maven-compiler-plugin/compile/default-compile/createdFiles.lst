@@ -9,6 +9,7 @@ bsu\chatbot\usermanagement\model\UserProfileDto.class
 bsu\chatbot\usermanagement\dao\AppDaoImpl.class
 bsu\chatbot\usermanagement\model\Location.class
 bsu\chatbot\usermanagement\service\UserProfileServiceImpl.class
+bsu\chatbot\usermanagement\service\MapperServiceImpl.class
 bsu\chatbot\usermanagement\dao\UserDaoImpl.class
 bsu\chatbot\usermanagement\helper\ApplicationHealthCheck.class
 bsu\chatbot\endpoint\MyEndpoint.class
@@ -22,6 +23,6 @@ bsu\chatbot\usermanagement\model\App.class
 bsu\chatbot\usermanagement\helper\ReadinessProbe.class
 bsu\chatbot\usermanagement\service\UserServiceImpl.class
 bsu\chatbot\utils\JDBCUtil.class
-bsu\chatbot\usermanagement\service\JDBCService.class
+bsu\chatbot\usermanagement\service\MapperService.class
+bsu\chatbot\usermanagement\model\User.class
 bsu\chatbot\usermanagement\model\LocationDetail.class
-bsu\chatbot\usermanagement\service\JDBCServiceImpl.class
